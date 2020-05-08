@@ -13,7 +13,8 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      data:[]
+      data:[],
+      darkMode:false
     }
   }
 // 3.______Fetch Data From API Through Lifecycle Method cDM_________//
@@ -30,14 +31,19 @@ class App extends React.Component {
         console.log(err)
       })
   }
+  toggleMode = e => {
+    e.preventDefault();
+    this.setState({
+      darkMode:!this.state.darkMode});
+  };
 // 4.______Render JSX Elements Through 'render' method_________//
   render(){
     return (
       <div className="App">
         <header className="App-header">
-          <h1>🏆Women of the World Cup🏆</h1>
+          <h1 data-testid='headline'>🏆Women of the World Cup🏆</h1>
           <a>June 2019 - July 2019</a>
-          <a href='/'>Reload Page</a>
+          <a onClick={this.toggleMode} className={this.state.darkMode ? 'toggle toggled' : 'toggle'}>{this.state.darkMode ? 'Lighten Page':'Darken Page'}</a>
           
         <ContestantCards data={this.state.data}/>
         </header>

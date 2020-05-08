@@ -30,7 +30,7 @@ const ContestantCards = (props)=>{
         setActiveIndex(newIndex);
     }
 
-    const slides = props.data.map(contestant=>(
+    const slides = contestants.map(contestant=>(
         <CarouselItem
             onExiting={()=>{setAnimating(true)}}
             onExited={()=>{setAnimating(false)}}

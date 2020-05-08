@@ -3,6 +3,11 @@
   background-color: #f5ed00;
 
 }
+.toggle.toggled {
+  text-align: center;
+  background-color: #262832;
+
+}
 
 .App-header {
   background-color: #282c34d2;
